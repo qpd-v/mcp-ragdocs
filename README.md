@@ -2,6 +2,8 @@
 
 A Model Context Protocol (MCP) server that enables semantic search and retrieval of documentation using a vector database (Qdrant). This server allows you to add documentation from URLs or local files and then search through them using natural language queries.
 
+<a href="https://glama.ai/mcp/servers/q4uywrflxx"><img width="380" height="200" src="https://glama.ai/mcp/servers/q4uywrflxx/badge" alt="MCP-Ragdocs MCP server" /></a>
+
 ## Version
 
 Current version: 0.1.6
