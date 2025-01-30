@@ -1,0 +1,36 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - qdrantUrl
+    properties:
+      qdrantUrl:
+        type: string
+        description: The URL of your Qdrant instance. For local use http://localhost:6333
+      qdrantApiKey:
+        type: string
+        default: ""
+        description: Your Qdrant Cloud API key
+      embeddingProvider:
+        type: string
+        default: ollama
+        description: Embedding provider to use ('ollama' or 'openai')
+      ollamaUrl:
+        type: string
+        default: http://localhost:11434
+        description: URL of your Ollama instance
+      openaiApiKey:
+        type: string
+        description: Your OpenAI API key
+      embeddingModel:
+        type: string
+        default: ""
+        description: Model to use for embeddings
+  commandFunction:
+    # A function that produces the CLI command to start the MCP on stdio.
+    |-
+    config => ({ command: 'node', args: ['build/index.js'], env: { QDRANT_URL: config.qdrantUrl, QDRANT_API_KEY: config.qdrantApiKey, EMBEDDING_PROVIDER: config.embeddingProvider, OLLAMA_URL: config.ollamaUrl, OPENAI_API_KEY: config.openaiApiKey, EMBEDDING_MODEL: config.embeddingModel } })
