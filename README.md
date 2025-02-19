@@ -1,4 +1,5 @@
 # MCP-Ragdocs
+[![smithery badge](https://smithery.ai/badge/@qpd-v/mcp-server-ragdocs)](https://smithery.ai/server/@qpd-v/mcp-server-ragdocs)
 
 A Model Context Protocol (MCP) server that enables semantic search and retrieval of documentation using a vector database (Qdrant). This server allows you to add documentation from URLs or local files and then search through them using natural language queries.
 
@@ -62,6 +63,15 @@ Current version: 0.1.6
 
 ## Installation
 
+### Installing via Smithery
+
+To install RAGDocs for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@qpd-v/mcp-server-ragdocs):
+
+```bash
+npx -y @smithery/cli install @qpd-v/mcp-server-ragdocs --client claude
+```
+
+### Manual Installation
 Install globally using npm:
 
 ```bash
